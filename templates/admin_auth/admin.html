@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Admin Login{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/user_css/admin.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <form method="post" action="/admin_login/">
+        {% csrf_token %}
+        <h2>Admin Login</h2><br><br>
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" required><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+        <input type="submit" value="Login">
+    </form>
+<div class="return-home-btn">
+    <a href="{% url 'login_panel' %}">
+        <button type="button">Return to Home</button>
+    </a>
+</div>
+    {% if error %}
+        <p class="error-message">{{ error }}</p>
+    {% endif %}
+{% endblock %}

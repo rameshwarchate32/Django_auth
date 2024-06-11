@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Create Account{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/create_account.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h2>Create Account</h2>
+    <form method="post" action="{% url 'create_account' %}">
+        {% csrf_token %}
+        <label for="account_no">Account Number:</label><br>
+        <input type="text" id="account_no" name="account_no" required><br>
+
+        <label for="branch_name">Branch Name:</label><br>
+        <input type="text" id="branch_name" name="branch_name" required><br>
+
+        <label for="balance">Initial Balance:</label><br>
+        <input type="number" id="balance" name="balance" required><br>
+
+        <label for="account_type">Account Type:</label><br>
+        <select id="account_type" name="account_type" required>
+            <option value="savings">Savings</option>
+            <option value="current">Current</option>
+            <option value="salary">Salary</option>
+        </select><br><br>
+
+        <input type="submit" value="Create Account">
+    </form>
+
+<a href="{% url 'dashboard' %}">
+        <button type="button">Return to Dashboard</button>
+    </a>
+{% endblock %}

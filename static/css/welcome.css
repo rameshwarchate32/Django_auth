@@ -1,0 +1,77 @@
+/* Reset and General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+
+
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Action Links */
+table a {
+    text-decoration: none;
+    margin-right: 10px;
+    padding: 8px 16px;
+    color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+table a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Return to Home Button */
+.return-home-btn {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.return-home-btn a {
+    text-decoration: none;
+}
+
+.return-home-btn button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.return-home-btn button:hover {
+    background-color: #0056b3;
+}

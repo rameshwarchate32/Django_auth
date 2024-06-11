@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Deposit Money{% endblock %}
+
+{% block extra_css %}
+    <!-- Include any additional CSS files -->
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <h1>Deposit Money</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="amount">Amount to Deposit:</label>
+            <input type="number" id="amount" name="amount" required>
+            <button type="submit">Deposit</button>
+        </form>
+        <a href="{% url 'dashboard' %}"> <!-- Link to dashboard -->
+            <button type="button">Return to Dashboard</button>
+        </a>
+    </div>
+
+{% endblock %}

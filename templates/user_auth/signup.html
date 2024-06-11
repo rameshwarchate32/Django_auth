@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Sign Up{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/user_css/signup.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <form method="post" action="/user_register/">
+        {% csrf_token %}
+        <h2>User Sign Up</h2><br><br>
+        <label for="first_name">First Name:</label><br>
+        <input type="text" id="first_name" name="first_name" required><br>
+
+        <label for="last_name">Last Name:</label><br>
+        <input type="text" id="last_name" name="last_name" required><br>
+
+        <label for="username">Email:</label><br>
+        <input type="email" id="username" name="username" required><br>
+
+        <label for="job_title">Job Title:</label><br>
+        <select id="job_title" name="job_title" required>
+            <option value="manager">Manager</option>
+            <option value="agents">Customer service agents</option>
+            <option value="loan">Loan officers</option>
+            <option value="accountant">Accountant</option>
+        </select><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br>
+
+        <label for="confirm_password">Confirm Password:</label><br>
+        <input type="password" id="confirm_password" name="confirm_password" required><br>
+
+        <label for="is_staff">Is Staff:</label>
+        <input type="checkbox" id="is_staff" name="is_staff" value="True"><br><br>
+
+        <input type="submit" value="Register">
+    </form>
+    <div class="return-home-btn">
+        <a href="{% url 'login_panel' %}">
+            <button type="button">Return to Home</button>
+        </a>
+    </div>
+{% endblock %}

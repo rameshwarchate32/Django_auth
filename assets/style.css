@@ -1,0 +1,155 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+/* Header Styles */
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Navigation Styles */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+    background-color: #555;
+}
+
+section {
+    background-color: #555;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+section h2 {
+    color: #007bff;
+}
+
+section img {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 100%;
+    height: auto;
+}
+
+section p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Additional Styles */
+@media (min-width: 768px) {
+    header, footer {
+        text-align: left;
+        padding: 20px 50px;
+    }
+
+    nav {
+        justify-content: flex-start;
+        padding-left: 50px;
+    }
+}
+
+@media (max-width: 767px) {
+    nav ul li {
+        display: block;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 15px;
+        border-bottom: 1px solid #555;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+header, nav, main, footer {
+    animation: fadeIn 1s ease-in-out;
+}
+
+h2 {
+    text-align: center;
+}
+
+img {
+    border-radius: 10px;
+}
+
+p {
+    text-align: justify;
+}
+
+/* Custom Classes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.highlight {
+    background-color: #ffeb3b;
+    padding: 5px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+    background-color: #007bff;
+    color: white;
+}

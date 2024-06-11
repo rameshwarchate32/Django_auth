@@ -1,0 +1,31 @@
+<!-- transfer.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Transfer Money</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <label for="receiver_account_no">Receiver's Account No:</label>
+        <input type="text" id="receiver_account_no" name="receiver_account_no"><br>
+        <label for="amount">Amount:</label>
+        <input type="text" id="amount" name="amount"><br>
+        <button type="submit">Transfer</button>
+    </form>
+
+    <!-- Display messages -->
+    {% for message in messages %}
+        <div id="success-message" class="alert alert-success">{{ message }}</div>
+    {% endfor %}
+
+    <script>
+        // Remove success message after 2 seconds
+        setTimeout(function() {
+            var successMessage = document.getElementById('success-message');
+            if (successMessage) {
+                successMessage.remove();
+            }
+        }, 2000);
+    </script>
+{% endblock %}

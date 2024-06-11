@@ -1,0 +1,187 @@
+/* Reset and General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px 155px;
+    text-align: left;
+    display: block; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically */
+}
+
+.brand {
+    flex: 1; /* Take up remaining space */
+    text-align: left; /* Align bank name to the left */
+    margin-left: 20px; /* Add space between bank name and edge of header */
+}
+
+/* Navigation Styles */
+nav {
+    text-align: right; /* Align navigation links to the right */
+}
+
+nav ul {
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #0056b3; /* Change hover background color */
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+}
+
+section {
+    position: relative; /* Ensure relative positioning for absolute elements */
+    background-color: #fff; /* Background color for other sections */
+    padding: 40px 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+
+section p {
+    text-align: justify;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styles */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+form textarea {
+    height: 100px;
+}
+
+form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Overlay and Text Styling for Home Section */
+.full-screen .content {
+    position: relative;
+    height: 100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+    z-index: 2; /* Overlay above image */
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    z-index: 3; /* Text above overlay */
+    width: 80%; /* Adjust width as needed */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    nav ul li:last-child {
+        margin-bottom: 0;
+    }
+
+    section {
+        padding: 30px;
+    }
+}

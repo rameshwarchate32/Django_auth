@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Registration Page{% endblock %}
+
+{% block content %}
+<h2>Register</h2>
+<form action="registration" method="post">
+    {% csrf_token %}
+
+    <input type="text" name="fname" placeholder="First Name" value="{{ fname|default_if_none:'' }}"><br><br>
+    <input type="text" name="lname" placeholder="Last Name" value="{{ lname|default_if_none:'' }}"><br><br>
+    <input type="email" name="email" placeholder="Email" value="{{ email|default_if_none:'' }}"><br><br>
+    <input type="password" name="password" placeholder="Password"><br><br>
+    <input type="password" name="confirm_password" placeholder="Confirm Password"><br><br>
+
+    {% if error %}
+        <div style="color: red;">{{ error }}</div>
+    {% endif %}
+
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

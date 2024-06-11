@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Welcome Page{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/welcome.css' %}">
+{% endblock %}
+
+{% block content %}
+<main>
+    <h1>Welcome Page</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Action</th>
+                <th>Action</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in data %}
+            <tr>
+                <td>{{ student.id }}</td>
+                <td>{{ student.fname }}</td>
+                <td>{{ student.lname }}</td>
+                <td>{{ student.email }}</td>
+                <td>{{ student.password }}</td>
+                <td>
+                    <a href="{% url 'delete_stud' student.id %}">Delete</a>
+                </td>
+                <td>
+                    <a href="{% url 'edit_stud' student.id %}">Edit</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="6">No students found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="return-home-btn">
+        <a href="{% url 'base' %}">
+            <button type="button">Return to Home</button>
+        </a>
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,91 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rammzz Bank</title>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+{% block content %}
+    <header>
+        <div class="container">
+            <h1>Rammzz Bank</h1>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'base' %}">Home</a></li>
+                    <li><a href="{% url 'login1' %}">Login</a></li>
+                    <li><a href="{% url 'register1' %}">Register</a></li>
+                    <li><a href="{% url 'signin' %}">User_Login</a></li>
+                    <li><a href="{% url 'user_register' %}">User_Register</a></li>
+                    <li><a href="{% url 'admin_login' %}">Admin_Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="full-screen">
+            <div class="content">
+                    <h2>Welcome to Rammzz Bank</h2>
+                    <h1><a href="{% url 'register1' %}">Register</a></h1>
+                    <p>We provide secure and reliable banking services tailored to meet your financial needs.</p>
+                </div>
+        </section>
+
+        <section id="about" class="full-screen">
+            <div class="content">
+                <h2>About Us</h2>
+                <p>Rammzz Bank is dedicated to delivering exceptional banking solutions with a focus on customer satisfaction and innovation.</p>
+            </div>
+        </section>
+
+        <section id="services" class="full-screen">
+            <div class="content">
+                <h2>Our Services</h2>
+                <ul>
+                    <li>Savings Accounts</li>
+                    <li>Personal Loans</li>
+                    <li>Credit Cards</li>
+                    <li>Investment Solutions</li>
+                    <li>Online Banking</li>
+                    <li>Mobile Banking</li>
+                </ul>
+                <p>Explore our comprehensive range of services designed to help you achieve your financial goals.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="full-screen">
+            <div class="content">
+                <h2>Contact Us</h2>
+                <p>Have questions? Contact us using the form below or visit one of our branches.</p>
+
+                <form action="#" method="post">
+                    {% csrf_token %}
+                    <label for="name">Your Name:</label><br>
+                    <input type="text" id="name" name="name" required><br><br>
+
+                    <label for="email">Your Email:</label><br>
+                    <input type="email" id="email" name="email" required><br><br>
+
+                    <label for="message">Your Message:</label><br>
+                    <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Rammzz Bank. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}
+</body>
+</html>

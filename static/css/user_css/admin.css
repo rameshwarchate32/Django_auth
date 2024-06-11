@@ -1,0 +1,66 @@
+/* admin.css */
+
+/* Center the admin login form */
+form {
+    width: 450px;
+    margin: 50px auto;
+}
+
+/* Style form inputs and labels */
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Style error message */
+.error-message {
+    color: red;
+    margin-top: 15px;
+}
+
+
+/* Home Button Styles */
+.return-home-btn {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.return-home-btn a {
+    text-decoration: none;
+}
+
+.return-home-btn button {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.return-home-btn button:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Dashboard Page{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard.css' %}">
+{% endblock %}
+
+{% block content %}
+    {% include 'auth/message.html' %}
+
+    <div class="container">
+        <h1>Dashboard Page</h1>
+        <p>Welcome, {{ request.session.username }}</p>
+        <a href="{% url 'logout' %}">Logout</a>
+
+        <a href="{% url 'create_account' %}">Create Account</a> <!-- Link to create account -->
+
+        {% if account %}
+            <a href="{% url 'account_details' account.id %}">View Account Details</a> <!-- Link to account details -->
+        {% endif %}
+
+        <a href="{% url 'login_panel' %}">
+            <button type="button">Return to Home</button>
+        </a>
+    </div>
+
+    <script src="{% static 'js/dashboard.js' %}"></script> <!-- Include the JavaScript file -->
+{% endblock %}

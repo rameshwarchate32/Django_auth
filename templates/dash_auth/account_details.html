@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Account Details{% endblock %}
+
+{% block extra_css %}
+    <!-- Include any additional CSS files -->
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <h1>Account Details</h1>
+        <!-- Display account details here -->
+        <p><strong>Account Number:</strong> {{ account.account_no }}</p>
+        <p><strong>Branch Name:</strong> {{ account.branch_name }}</p>
+        <p><strong>Balance:</strong> ${{ account.balance }}</p>
+        <p><strong>Account Type:</strong> {{ account.get_account_type_display }}</p>
+
+        <a href="{% url 'deposit_money' account.id %}">Deposit Money</a><br> <!-- Link to deposit page -->
+        <a href="{% url 'withdraw_money' account.id %}">Withdraw Money</a><br> <!-- Link to withdraw page -->
+        <a href="{% url 'transfer_money' account.id %}">Transfer Money</a><br> <!-- Link to withdraw page -->
+
+        <a href="{% url 'dashboard' %}"> <!-- Link to dashboard -->
+            <button type="button">Return to Dashboard</button>
+        </a>
+    </div>
+
+{% endblock %}
